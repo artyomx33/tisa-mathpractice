@@ -77,6 +77,8 @@ export const useAppStore = create<AppStore>()(
       selectedWorkbook: 'russian' as WorkbookType,
       setSelectedWorkbook: (workbook) => set({
         selectedWorkbook: workbook,
+        // Also set UI language to match workbook
+        language: workbook === 'russian' ? 'ru' : 'en',
         // Reset progress when switching workbooks
         currentProblem: 0,
         completedProblems: [],

@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'motion/react'
 import { Box, Text, Button3D, Card3D, ProgressBar } from './atoms'
 import { ProblemDisplay } from './ProblemDisplay'
 import { SegmentProblemsView } from './SegmentProblemsView'
-import { LanguageSelector } from './LanguageSelector'
 import { NavigationMenu } from './NavigationMenu'
 import { Workbook, Problem } from '@/lib/data/types'
 import { useAppStore, WorkbookType } from '@/lib/store'
@@ -275,12 +274,9 @@ export function PracticePage({ workbooks }: PracticePageProps) {
               {t('appTitle')}
             </Text>
           </Box>
-          <Box flex align="center" gap="md">
-            <Text variant="small" color="muted">
-              {t('solved')}: {completedCount}
-            </Text>
-            <LanguageSelector />
-          </Box>
+          <Text variant="small" color="muted">
+            {t('solved')}: {completedCount}
+          </Text>
         </Box>
 
         {/* Practice Mode Banner */}
